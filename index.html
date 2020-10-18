@@ -25,9 +25,9 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button class="btn btn-default"><i id="faMinus" class="fas fa-minus"></i></button>
+                           <input id="phoneAdd" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="faPlus" class="fas fa-plus"></i></button>
                         </div>
                         <h5>$1219</h5>
                         <img src="images/remove.png" alt="" class="remove-item">
@@ -44,8 +44,8 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <input id="casingAdd" type="text" class="form-control text-center" value="1">
+                           <button class="btn btn-default"><i id="faPlus2" class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -77,6 +77,32 @@
          </div>
       </div>
    </section>
+
+   <script>
+      // Add Item event listener
+      const addItem = document.getElementById('faPlus');
+      addItem.addEventListener('click', function(){
+         const phoneAdd = document.getElementById('phoneAdd').value;
+         const phoneNumberAdd = parseFloat(phoneAdd);
+         const totalNumberAdd = phoneNumberAdd + 1 ;
+
+         document.getElementById('phoneAdd').value = totalNumberAdd;
+         
+      })
+
+      const addItem2 = document.getElementById('faPlus2');
+      addItem2.addEventListener('click', function () {
+         const casingAdd = document.getElementById('casingAdd').value;
+         const casingNumberAdd = parseFloat(casingAdd);
+         const totalCasingAdd = casingNumberAdd + 1 ;
+
+         document.getElementById('casingAdd').value = totalCasingAdd;
+
+      })
+   </script>
+
+
+
 </body>
 
 </html>
