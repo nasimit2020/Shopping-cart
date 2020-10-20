@@ -29,7 +29,7 @@
                            <input id="phoneAdd" type="text" class="form-control text-center" value="1">
                            <button class="btn btn-default"><i id="faPlus" class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5>$ <span id="phonePrice">1219</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -43,7 +43,7 @@
                      </div>
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button class="btn btn-default"><i id="faMinus2" class="fas fa-minus"></i></button>
                            <input id="casingAdd" type="text" class="form-control text-center" value="1">
                            <button class="btn btn-default"><i id="faPlus2" class="fas fa-plus"></i></button>
 
@@ -86,7 +86,8 @@
          const phoneNumberAdd = parseFloat(phoneAdd);
          const totalNumberAdd = phoneNumberAdd + 1 ;
 
-         document.getElementById('phoneAdd').value = totalNumberAdd;
+         const setNumber = document.getElementById('phoneAdd').value = totalNumberAdd;
+         
          
       })
 
@@ -98,6 +99,26 @@
 
          document.getElementById('casingAdd').value = totalCasingAdd;
 
+      })
+
+
+      // Less event Listener
+
+      const lessItem = document.getElementById('faMinus');
+      lessItem.addEventListener('click', function () {
+         const phoneLess =  document.getElementById('phoneAdd').value;
+         const phoneNumberLess = parseFloat(phoneLess);
+         const totalPhoneLess = phoneNumberLess - 1;
+         document.getElementById('phoneAdd').value = totalPhoneLess;
+      })
+
+      const lessItemCasing = document.getElementById('faMinus2');
+      lessItemCasing.addEventListener('click', function () {
+         const casingLess = document.getElementById('casingAdd').value;
+         const casingNumberLess = parseFloat(casingLess);
+         const totalcasingless = casingNumberLess - 1 ;
+
+         document.getElementById('casingAdd').value = totalcasingless;
       })
    </script>
 
